@@ -436,6 +436,8 @@ void MetricsService::InitializeMetricsRecordingState() {
 }
 
 void MetricsService::Start() {
+  // ULTRALIGHT BROWSER MOD
+  return;
   HandleIdleSinceLastTransmission(false);
   EnableRecording();
   EnableReporting();
