@@ -273,7 +273,8 @@ void RLZTracker::ClearDelegateForTesting() {
 }
 
 // static
-bool RLZTracker::InitRlzDelayed(bool first_run,
+bool RLZTracker::InitRlzDelayed(bool a, bool b, bool c, bool d, bool e) { return false; } // FLEX: Disabled RLZ
+bool RLZTracker::OLD_Init(bool first_run,
                                 bool send_ping_immediately,
                                 base::TimeDelta delay,
                                 bool is_google_default_search,
