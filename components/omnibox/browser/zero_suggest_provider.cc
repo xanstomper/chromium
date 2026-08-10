@@ -650,7 +650,11 @@ void ZeroSuggestProvider::RunComposeboxPrefetch(
                                   &composebox_prefetch_loader_);
 }
 
-void ZeroSuggestProvider::Start(const AutocompleteInput& input,
+void ZeroSuggestProvider::Start(const AutocompleteInput& input, bool minimal_changes) {
+  // FLEX BROWSER UI: Disable remote zero-suggest to enforce minimal local omnibox and zero telemetry.
+  return;
+}
+void ZeroSuggestProvider::OLD_Start(const AutocompleteInput& input,
                                 bool minimal_changes) {
   TRACE_EVENT0("omnibox", "ZeroSuggestProvider::Start");
   Stop(AutocompleteStopReason::kClobbered);
