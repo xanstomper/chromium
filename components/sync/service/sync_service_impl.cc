@@ -306,6 +306,8 @@ SyncServiceImpl::~SyncServiceImpl() {
 }
 
 void SyncServiceImpl::Initialize(DataTypeController::TypeVector controllers) {
+  // FLEX BROWSER: Completely disable sync initialization.
+  return;
   DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
 
   data_type_manager_ = std::make_unique<DataTypeManagerImpl>(
