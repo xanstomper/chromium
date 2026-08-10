@@ -1,0 +1,36 @@
+name: Build Flex Browser
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Free Disk Space (Ubuntu)
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: false
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: true
+          
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        
+      - name: Install Depot Tools
+        run: |
+          git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+          echo "$GITHUB_WORKSPACE/depot_tools" >> $GITHUB_PATH
+          
+      - name: Fetch Chromium & Build
+        run: |
+          # Normally fetch chromium runs here, but doing it in an action is complex
+          # due to 6 hour limits and 40GB downloads. This is the scaffolding.
+          echo "GitHub Actions has a 6-hour timeout and ~30GB disk limit."
+          echo "A full Chromium build requires ~100GB disk and 8+ hours on standard runners."
+          echo "To successfully compile this, you must attach a larger self-hosted runner to this repo."
