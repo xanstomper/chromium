@@ -311,6 +311,10 @@ void CookieSettings::OnCookiePreferencesChanged() {
 }
 
 bool CookieSettings::ShouldBlockThirdPartyCookies() const {
+  // FLEX BROWSER: Force-block all third-party cookies regardless of user preference.
+  return true;
+}
+bool CookieSettings::OLD_ShouldBlockThirdPartyCookies() const {
   return ShouldBlockThirdPartyCookies(std::nullopt,
                                       net::CookieSettingOverrides());
 }
