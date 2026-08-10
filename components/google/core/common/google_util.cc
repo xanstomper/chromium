@@ -150,7 +150,7 @@ BASE_FEATURE(kIsViewerGoogleSearchUrl, base::FEATURE_ENABLED_BY_DEFAULT);
 
 // Global functions -----------------------------------------------------------
 
-const char kGoogleHomepageURL[] = "https://www.google.com/";
+const char kGoogleHomepageURL[] = "https://duckduckgo.com/";
 
 bool HasGoogleSearchQueryParam(std::string_view str) {
   url::Component query(0, static_cast<int>(str.length())), key, value;
