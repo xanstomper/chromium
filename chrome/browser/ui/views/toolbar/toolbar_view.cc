@@ -306,7 +306,7 @@ ToolbarView::~ToolbarView() {
 }
 
 void ToolbarView::Init() {
-  // FLEX BROWSER UI: Minimalistic flat toolbar styling.
+  // VANTA BROWSER UI: Minimalistic flat toolbar styling.
   SetBackground(views::CreateSolidBackground(SK_ColorBLACK));
 #if defined(USE_AURA)
   // Avoid generating too many occlusion tracking calculation events before this
